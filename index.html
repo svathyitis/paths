@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vishal Merani </title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f4f6f9;
+      --text: #1c1c1e;
+      --muted: #777;
+      --border: #d9e1ec;
+      --accent: #6a5799;
+      --accent-hover: #8473c6;
+      --box-bg: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text); 
+      padding: 22px 14px;
+    }
+
+    .iphone-frame {
+      background: var(--box-bg);
+      border-radius: 36px;
+      max-width: 390px;
+      width: 100%;
+      margin: 0 auto 32px auto;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      padding: 26px 20px;
+      border: 1px solid var(--border);
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 470;
+      margin-bottom: 0.4rem;
+    }
+
+    h3 {
+      font-size: 1.0rem;
+      font-weight: 390;
+      margin: 1rem 0 0.3rem;
+    }
+
+    h4 {
+      font-size: 0.65rem;
+      font-weight: 400;
+      margin: 0.5rem 0;
+    }
+
+    h5 {
+      font-size: 0.5rem;
+      font-weight: 600;
+      margin: 0.8rem 0 0.3rem;
+    }
+
+    .subtitle {
+      font-size: 0.875rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .info-block {
+      margin-bottom: 1.2rem;
+    }
+
+    .info-block p {
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: var(--accent);
+      color: white;
+      padding: 0.55rem 1.0rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 0.65rem;
+      font-weight: 550;
+      margin: 0.65rem 0;
+      transition: background 0.2s ease;
+    }
+
+    .button:hover {
+      background-color: var(--accent-hover);
+    }
+
+    ul.timeline, ul.features {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.5rem 0 0;
+    }
+
+    .timeline li, .features li {
+      font-size: 0.75rem;
+      padding: 3px 0;
+    }
+
+    .features li {
+      color: #555;
+    }
+
+    .copy-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 1.2rem;
+    }
+
+    .copy-input {
+      flex: 1;
+      padding: 8px 12px;
+      font-size: 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #f9fafc;
+      font-family: monospace;
+    }
+
+    .copy-btn {
+      padding: 8px 12px;
+      background-color: #6a5799;
+      color: #333;
+      font-size: 0.7rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .copy-btn:hover {
+      background-color: #6a5795;
+      color: white;
+    }
+
+    .wa-icon {
+      width: 22px;
+      height: 22px;
+      display: inline-block;
+      background: url('https://img.icons8.com/color/48/000000/whatsapp--v1.png') no-repeat center center;
+      background-size: contain;
+      cursor: pointer;
+    }
+
+    .footer {
+      font-size: 0.65rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 0.8rem;      /* reduced from 1.8rem */
+  margin-bottom: 0.5rem;   /* add this line if not present */
+  line-height: 1.2;  
+    }
+
+.iphone-frame {
+  position: relative;
+  z-index: 1;
+  border-radius: 36px;
+  overflow: hidden;
+  border: 1px solid var(--border); /* keep existing border */
+  box-shadow: 0 0 0.5px rgba(144, 137, 245, 0.5);
+}
+
+.iphone-frame::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 32px;
+  pointer-events: none;
+  z-index: -1;
+  border: 1.5px solid transparent;
+  background: linear-gradient(135deg, #9089f5, #f093fb, #9089f5) border-box;
+  mask: 
+    linear-gradient(#fff 0 0) padding-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) padding-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  animation: subtlePulse 6s ease-in-out infinite;
+}
+
+@keyframes subtlePulse {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.copy-input, .copy-btn {
+  transition: background 0.3s, color 0.3s;
+}
+
+.location-text, .queries-text {
+  color: var(--location-color);
+}
+
+body.dark h1,
+body.dark h2,
+body.dark h3 {
+  color: #b69ad4;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin: 10px 0 20px;
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  fill: var(--accent);
+  transition: fill 0.3s ease;
+}
+
+body.dark .icon {
+  fill: #b69ad4;
+}
+
+.icon:hover {
+  fill: var(--accent-hover);
+}
+
+/* Container styling */
+.subtle-card-with-text {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Image animation */
+.subtle-card-with-text img {
+  width: 100%;
+  border-radius: 20px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: fadeInSubtle 0.8s ease-out forwards;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* Hover effects */
+.subtle-card-with-text:hover img {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(180, 120, 255, 0.3);
+}
+
+/* Optional glowing animation */
+@keyframes fadeInSubtle {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optional title overlay */
+.overlay-text {
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #ffffffdd;
+  font-family: 'Playfair Display', serif;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.subtle-card-with-text:hover .overlay-text {
+  opacity: 1;
+}
+
+
+  </style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QL72FZ9YZ2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QL72FZ9YZ2');
+</script>
+
+</head>
+
+<body>
+
+<!-- Moon Toggle (Vector style) -->
+<div id="mode-toggle" style="
+  position: relative;
+  width: 100%;
+  max-width: 390px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px 22px;
+">
+  <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#6a5799" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon" style="cursor: pointer; transition: transform 0.3s ease;">
+    <path d="M21 12.79A9 9 0 0112.21 3a7 7 0 100 14.58A9 9 0 0021 12.79z"/>
+  </svg>
+</div>
+
+
+
+ <!-- Become a Thiel Fellow -->
+  <div class="iphone-frame">
+    <h1>Become a Thiel Fellow,</h1>
+    <h2>Two years. $200,000. </h2>
+    <p class="subtitle">with Vishal Merani</p>
+    <h3>Some ideas can’t wait.</h3> 
+    <p class="subtitle">A different path for everyone 👣 </p>
+   <ul class="features">
+    <li>⤷ Freedom to get stuff done </li> </ul>
+    <a href="https://thielfellowship.org/" class="button" target="_blank">Apply Now</a> 
+    <ul class="features">
+      <li>⤷ Skip debt. Gain mentors. Build bold ideas.</li>
+      <li>⤷ Backed by top minds and real-world support. </li>
+      <li>⤷ From dropout risk to founder badge of honor. </li>
+    </ul>
+    </div>
+    <div class="footer"> 😌 3 days, 2 hours a day | ♡ Online Sessions <br>
+ॐ  Jai Guru Dev ॐ
+</div>
+  </div>
+
+
+
+
+  <script>
+    function copyToClipboard(id, btn) {
+      const input = document.getElementById(id);
+      input.select();
+      input.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(input.value);
+      btn.innerText = "Copied!";
+      setTimeout(() => btn.innerText = "Copy", 1500);
+
+      // Update WhatsApp link
+      const waLink = document.querySelector(`#waLink${id.slice(-1)}`);
+      const msg = encodeURIComponent(input.value);
+      waLink.href = `https://wa.me/?text=${msg}`;
+    }
+  </script>
+
+<script>
+  const moonIcon = document.getElementById("moon-icon");
+  let darkMode = false;
+
+  moonIcon.addEventListener("click", () => {
+    darkMode = !darkMode;
+    document.body.classList.toggle("dark", darkMode);
+    document.documentElement.style.setProperty('--bg', darkMode ? '#1c1c1e' : '#f4f6f9');
+    document.documentElement.style.setProperty('--text', darkMode ? '#e0e0e0' : '#1c1c1e');
+    document.documentElement.style.setProperty('--location-color', darkMode ? '#b69ad4' : '#555');
+    document.documentElement.style.setProperty('--muted', darkMode ? '#aaa' : '#777');
+    document.documentElement.style.setProperty('--border', darkMode ? '#444' : '#d9e1ec');
+    document.documentElement.style.setProperty('--box-bg', darkMode ? '#2c2c2e' : '#ffffff');
+
+    // Update accent and button contrast for dark
+    document.querySelectorAll('.button').forEach(btn => {
+      btn.style.backgroundColor = darkMode ? '#6a5795' : 'var(--accent)';
+      btn.style.color = darkMode ? '#1c1c1e' : 'white';
+      
+
+    });
+
+    // Update input backgrounds
+    document.querySelectorAll('.copy-input').forEach(input => {
+      input.style.backgroundColor = darkMode ? '#3a3a3c' : '#f9fafc';
+      input.style.color = darkMode ? '#b69ad4' : '#1c1c1e';
+    });
+
+ document.querySelectorAll('.copy-btn').forEach(btn => {
+  btn.style.backgroundColor = darkMode ? '#3a2e57' : '#E6E6FA'; // Optional: deeper purple bg
+  btn.style.color = darkMode ? '#b69ad4' : '#333';
+
+
+    });
+
+    // Optional: rotate the moon icon on toggle
+    moonIcon.style.transform = darkMode ? "rotate(180deg)" : "rotate(0deg)";
+  });
+</script>
+
+</body>
+</html>
